@@ -31,8 +31,19 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Longest Gap" + ReturnLongestBinaryGap(6291457));
-            //GeneratePassword(null);
+           Dictionary<string, int> inputDicWithInt = new Dictionary<string, int>
+            {
+                { "2", 1073741727},
+                { "3", 20000},
+                { "0-", -50},
+                { "0--", 0},
+                { "1---", 5},
+            };
+
+            foreach (KeyValuePair<string, int> kvp in inputDicWithInt)
+            {
+                Console.WriteLine("input: " + string.Join(',', kvp.Value) + " expected Value: " + kvp.Key.ToString() + " Output: " + ReturnLongestBinaryGap(kvp.Value));
+            }
            
 
         }
